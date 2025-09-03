@@ -26,7 +26,7 @@ public class Board extends JPanel implements ActionListener {
     Image body, head ,apple;
 
     Timer timer;
-    int DELAY = 125;
+    int DELAY = 130;
 
     //initial move of snake towards left
     boolean leftDirection = false;
