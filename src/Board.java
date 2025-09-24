@@ -33,12 +33,11 @@ public class Board extends JPanel implements ActionListener {
     boolean rightDirection = false;
     boolean upDirection = true;
     boolean downDirection = false;
+    boolean paused = false;
+
 
     //for collisions
     boolean inGame = true;
-
-
-
 
     Board(){
         TAdapter tAdapter = new TAdapter();
@@ -48,12 +47,6 @@ public class Board extends JPanel implements ActionListener {
         setBackground(Color.black);
 
     }
-
-
-
-
-
-
 
     public void initGame(){
         DOTS = 3;
@@ -67,6 +60,11 @@ public class Board extends JPanel implements ActionListener {
         timer = new Timer(DELAY, this);
         timer.start();
     }
+    //add pausing option
+    public void togglePause() {
+        paused = !paused;
+    }
+
 
     //IMAGE LOADING FROM RESOURCES FOLDER
     public void loadImages(){
@@ -82,6 +80,11 @@ public class Board extends JPanel implements ActionListener {
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         doDrawing(g);
+        if(paused && inGame){
+            g.setColor(Color.WHITE);
+            g.setFont(new Font("Helvetica", Font.BOLD, 20));
+            g.drawString("PAUSED", (B_WIDTH-60)/2, B_HEIGHT/2);
+        }
     }
     //draw image
     public void doDrawing(Graphics g){
@@ -142,7 +145,7 @@ public class Board extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent){
-        if(inGame){
+        if(inGame && !paused){
             checkApple();
             checkCollisions();
             move();
