@@ -17,7 +17,7 @@
 <li>java StartFrame</li>
 </ul>
 
-<li>Use the arrow keys to move the snake:</li>li>
+<li>Use the arrow keys to move the snake:</li>
 <ul>
 <li>Up Arrow – Move up</li>
 <li>Down Arrow – Move down</li>
