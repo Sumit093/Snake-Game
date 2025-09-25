@@ -1,6 +1,10 @@
-How to Play
+<h2>Snake Game 🐍</h2>
 
-Run the Main.java file in your Java IDE or compile via terminal:
+<p>A classic Snake Game implemented in Java with a simple and interactive GUI. Players control the snake to eat food, grow longer, and avoid colliding with walls or itself.</P>
+
+<b>How to Play</b>
+
+Run the StartFrame.java file in your Java IDE or compile via terminal:
 
 javac StartFrame.java
 java StartFrame
