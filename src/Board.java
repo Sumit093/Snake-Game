@@ -47,6 +47,8 @@ public class Board extends JPanel implements ActionListener {
         setPreferredSize(new Dimension(B_WIDTH,B_HEIGHT));
         setBackground(Color.black);
 
+        loadImages();
+
     }
 
     public void initGame(){
@@ -69,12 +71,15 @@ public class Board extends JPanel implements ActionListener {
 
     //IMAGE LOADING FROM RESOURCES FOLDER
     public void loadImages(){
-        ImageIcon bodyIcon = new ImageIcon("src/resources/body.png");//BODY
-        body = bodyIcon.getImage();
-        ImageIcon headIcon = new ImageIcon("src/resources/head.png");//HEAD
-        head = headIcon.getImage();
-        ImageIcon appleIcon = new ImageIcon("src/resources/apple.png");//APPLE
-        apple = appleIcon.getImage();
+//        ImageIcon bodyIcon = new ImageIcon("src/resources/body.png");//BODY
+//        body = bodyIcon.getImage();
+//        ImageIcon headIcon = new ImageIcon("src/resources/head.png");//HEAD
+//        head = headIcon.getImage();
+//        ImageIcon appleIcon = new ImageIcon("src/resources/apple.png");//APPLE
+//        apple = appleIcon.getImage();
+        body = new ImageIcon(getClass().getResource("/body.png")).getImage();
+        head = new ImageIcon(getClass().getResource("/head.png")).getImage();
+        apple = new ImageIcon(getClass().getResource("/apple.png")).getImage();
     }
 
     @Override
